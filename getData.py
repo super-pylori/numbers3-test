@@ -172,11 +172,13 @@ def get_data_from_tableB(tableB_links):
     return backnumbers[::-1]
 
 tableA_links = get_tableA_links()
-
 backnumbersA = get_data_from_tableA(tableA_links)
 backnumbersA_df = pd.DataFrame(backnumbersA)
 with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
     print(backnumbersA_df)
+
+backnumbersA_df.to_csv('numbers3.csv')
+exit()
 
 tableB_links = get_tableB_links()
 backnumbersB = get_data_from_tableB(tableB_links)
